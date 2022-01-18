@@ -41,7 +41,7 @@ module.exports = {
           },
           {
             "text": "MySQL",
-            "link": "/docs/mysql/"
+            "link": "/docs/mysql/mysql_base.html"
           }
         ]
       },
@@ -94,14 +94,14 @@ module.exports = {
         "link": "https://vuepress-theme-reco.recoluan.com"
       }
     ],
-    "logo": "/logo.png",
-    "search": true,
-    "searchMaxSuggestions": 10,
-    "lastUpdated": "Last Updated",
-    "author": "Shuoka",
-    "authorAvatar": "/avatar.png",
-    "record": "xxxx",
-    "startYear": "2015",
+    logo: "/logo.png",
+    search: true,
+    searchMaxSuggestions: 10,
+    lastUpdated: "Last Updated",
+    author: "shuoka",
+    authorAvatar: "/avatar.png",
+    record: "xxxx",
+    startYear: "2015",
     codeTheme: "okaidia",
     huawei: true,
     subSidebar: 'auto'
