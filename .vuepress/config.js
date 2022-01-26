@@ -51,7 +51,7 @@ module.exports = {
         "items": [
           {
             "text": "GitHub",
-            "link": "https://github.com/recoluan",
+            "link": "https://github.com/shuokas",
             "icon": "reco-github"
           }
         ]
@@ -100,7 +100,7 @@ module.exports = {
     lastUpdated: "Last Updated",
     author: "shuoka",
     authorAvatar: "/avatar.png",
-    record: "xxxx",
+    record: "京ICP备2021015695号",
     startYear: "2015",
     codeTheme: "okaidia",
     huawei: true,
