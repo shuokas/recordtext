@@ -7,6 +7,8 @@ categories:
  - JavaScript
 ---
 
+雁过无痕 叶落无声，希望在岁月的长河中，经历也可以有所留存，作为记录，送给广大的朋友，也送给未来的自己，回头看，有所收获～
+
 ## JavaScript中的call()方法
 
 call()方法调用依赖于执行上下文，换句话说，可以将函数绑定到对象中，就好像它就是这个对象的属性一样。
@@ -24,7 +26,7 @@ add(2);
 
 上面代码我们可以看出，当我们想执行```add()```方法的时候，他返回this.num+v，但是函数内部没有属性num，因此调用this.num 失败。
 
-我们不难对象上面有个属性num，那我们可以直接在对象上调用add()吗？，就好像它属于该对象一样。
+我们不难看到对象上面有个属性num，那我们可以直接在对象上调用add()吗？，就好像它属于该对象一样。
 
 我们可以用call()方法将函数add()暂时绑定到对象obj，改变函数add()调用时的this指向
 
@@ -51,7 +53,7 @@ function add(who,v) {
 	return `${who} have ${this.num + v}` 
 }
 add.apply(obj, ['She',3]);
-add.apply(obj,  [ 'He',5]);
+add.apply(obj,  ['He',5]);
 ```
 ## JavaScript中的bind()方法
 
@@ -79,9 +81,9 @@ let person = {
 
 window.setTimeout(person.getName, 1000);// 打印 空
 ```
-可以看出，上面的例子并没有打印出person里面name的值而是直接输出空，这是为什么呢？
+可以看出，上面的例子并没有打印出person里面name的值而是直接输出**空**，这是为什么呢？
 
-当window调用它的setTimeout()方法时，它的this对象就是window对象。因此，当setTimeout()调用func指向 的 时person.getName()，它不知道这个人的名字是什么。bind()要克服这个问题，请使用该方法将函数绑定到 person 对象。这样无论你在哪里调用函数，它仍然可以访问name.person
+当window调用它的setTimeout()方法时，它的this对象就是window对象。因此，当setTimeout()调用函数person.getName()window对象中找不到这个函数，它不知道这个人的名字是什么。bind()要克服这个问题，请使用该方法将函数绑定到 person 对象。这样无论你在哪里调用函数，它仍然可以访问name.person
 
 我们将上面的例子稍微改造一下：
 ```
@@ -94,7 +96,7 @@ let person = {
 let func = person.getName.bind(person);
 window.setTimeout(func, 1000); // 打印 John
 ```
-总结
+## 总结
 
 ```
 var obj = { num: 2 };
@@ -110,6 +112,6 @@ const resultBind  = funcBind();
 
 console.log(resultCall, resultApply, resultBind);
 ```
-
+新年第一发，如有疏漏还望给予指正～
 
 
