@@ -1,6 +1,6 @@
 ---
 title: 开发必备Mysql命令（命令版）
-date: 2018-3-06
+date: 2020-5-06
 sidebar: true
 tags:
  - MySQL
