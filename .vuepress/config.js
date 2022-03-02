@@ -35,13 +35,13 @@ module.exports = {
         "text": "Docs",
         "icon": "reco-message",
         "items": [
-          {
-            "text": "vuepress-reco",
-            "link": "/docs/theme-reco/"
-          },
+          // {
+          //   "text": "vuepress-reco",
+          //   "link": "/docs/theme-reco/"
+          // },
           {
             "text": "MySQL",
-            "link": "/docs/mysql/mysql_base.html"
+            "link": "/docs/mysql/mysql_base.md"
           }
         ]
       },
@@ -66,7 +66,6 @@ module.exports = {
       ],
       "/docs/mysql/": [
         "mysql_base",
-        "mysql_basecopy",
       ]
     },
     "type": "blog",
