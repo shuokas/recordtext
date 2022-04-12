@@ -16,14 +16,13 @@ categories:
 
 2. 查看当前容器 CONTAINER ID
 ```docker ps -a```
-<img :src="$withBase('/logo.png')" alt="mixureSecure">
-<!-- ![](~@base/home_bg.png) -->
+<img :src="$withBase('/images/docker/code1.png')" alt="docker1">
 3. 上图，我的ID为 360f31a218b3，则进入容器目录修改对应配置文件
 ``` cd /var/lib/docker/containers/360f31a218b3* ```
 
 4. 修改hostconfig.json中的PortBindings字段
 ```"PortBindings":{"5700/tcp":[{"HostIp":"0.0.0.0","HostPort":"5781"}]} ```
-![](i/d8469a90-2ffe-4315-978f-c59cf09073d0.jpg)
+<img :src="$withBase('/images/docker/code2.png')" alt="docker2">
 
 5. 重启docker
 ```systemctl restart docker ``` 
