@@ -7,7 +7,7 @@ categories:
  - Git
 ---
 
-### git config
+## git config
 
 配置 Git 的相关参数。
 
