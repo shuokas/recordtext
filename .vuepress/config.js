@@ -1,6 +1,6 @@
 const path = require('path');
 module.exports = {
-  title: "拾页",
+  title: "记录生活分享快乐",
   description: "青春须早为 岂能长少年",
   dest: "public",
   head: [
