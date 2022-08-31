@@ -28,7 +28,7 @@ ES6之前我们在JavaScript中写异步代码的方式就是回调函数，这�
 1.高耦合，代码可读性差
 2.后期可维护性差
 
-````
+```javascript
 // 回调地狱
 firstFn(function (a) {
     secondFn(a, function (b) {
@@ -41,8 +41,7 @@ firstFn(function (a) {
         }, failureCallback);
     }, failureCallback);
 }, failureCallback);
-````
-
+```
 
 ### Promise
 

@@ -1,5 +1,5 @@
 ---
-title: 开发必备Mysql命令（命令版）
+title: 开发必备Mysql命令
 date: 2018-3-06
 type: docs
 tags:

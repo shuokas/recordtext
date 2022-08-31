@@ -33,7 +33,7 @@ module.exports = {
         "icon": "reco-date"
       },
       {
-        "text": "Docs",
+        "text": "文档",
         "icon": "reco-message",
         "items": [
           // {
