@@ -101,6 +101,7 @@ module.exports = {
     author: "shuoka",
     authorAvatar: "/avatar.png",
     record: "京ICP备2021015695号",
+    recordLink: "https://beian.miit.gov.cn/#/Integrated/index",
     startYear: "2015",
     codeTheme: "okaidia",
     huawei: true,

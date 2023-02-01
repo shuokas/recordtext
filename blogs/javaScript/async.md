@@ -1,5 +1,5 @@
 ---
-title: 浅谈：回调函数、async/await、Promises
+title: 回调函数、async/await、Promises 之间的联系与区别
 date: 2021-12-06
 tags:
  - JavaScript
@@ -8,6 +8,7 @@ categories:
 ---
 
 正如我们所熟悉“**JavaScript是一种同步的、阻塞的、单线程的语言**”，Javascript执行是从上而下顺序执行的，浏览器只分配一个主线程给JavaScript，执行的时候会进入一个**任务队列**，后面的任务等待前面任务执行完了之后才开始执行。
+
 ## 为什么是单线程？
 Javascript作为浏览器脚本语言，在浏览器环境中执行，承载着直接和用户交互的任务，必须对用户操作进行直接反馈。假如JavaScript是多线程的话，一个线程在某个DOM节点上进行了添加操作，其他线程在这个DOM节点上进行了编辑、删除……等操作，那么执行结果也就无从定论了，他的作用决定了他是单线程。
 ## JavaScript的异步处理？
@@ -61,7 +62,7 @@ firstFn(function (a) {
 
 #### 基础示例
 
-````
+````javascript
 let myFirstPromise = new Promise(function(resolve, reject){
     //当异步代码执行成功时，我们才会调用resolve(...), 当异步代码失败时就会调用reject(...)
     //在本例中，我们使用setTimeout(...)来模拟异步代码，实际编码时可能是XHR请求或是HTML5的一些API方法.
@@ -79,7 +80,7 @@ myFirstPromise.then(function(successMessage){
 
 ###### Promise实现
 
-````
+````javascript
 const processFn = (n) => {
     return new Promise(resolve => {
         setTimeout(() => resolve(n + 100), n);
@@ -122,7 +123,7 @@ runThis();
 > ES8 的 async/await 旨在解决利用异步结构组织代码的问题。为此，ECMAScript 对函数进行了扩展，
 为其增加了两个新关键字：async 和 await。
 
-```
+```javascript
 // async await方式
 const processFn = (n) => {
     return new Promise(resolve => {
