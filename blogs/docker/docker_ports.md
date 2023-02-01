@@ -7,27 +7,37 @@ categories:
  - Docker
 ---
 
-在docker运行中我们又遇到了更换端口映射的需求，那该怎么处理？于是熟练的打开www.**.com一顿查找，结果大致如下：
+在docker运行中我们又遇到了更换端口映射的需求，那该怎么处理？于是熟练的打开搜索引擎一通查找，结果大致如下：
 
 ### 一、修改配置文件，更改映射端口
 
 1. 首先：停止docker（否则更改不生效）
-```systemctl stop docker```
+``` shell
+systemctl stop docker
+```
 
 2. 查看当前容器 CONTAINER ID
-```docker ps -a```
+``` shell
+docker ps -a
+```
 <img :src="$withBase('/images/docker/code1.png')" alt="docker1">
+
 3. 上图，我的ID为 360f31a218b3，则进入容器目录修改对应配置文件
-``` cd /var/lib/docker/containers/360f31a218b3* ```
+
+```
+cd /var/lib/docker/containers/360f31a218b3*
+```
 
 4. 修改hostconfig.json中的PortBindings字段
-```"PortBindings":{"5700/tcp":[{"HostIp":"0.0.0.0","HostPort":"5781"}]} ```
+``` json
+"PortBindings":{"5700/tcp":[{"HostIp":"0.0.0.0","HostPort":"5781"}]} 
+```
 <img :src="$withBase('/images/docker/code2.png')" alt="docker2">
 
 5. 重启docker
-```systemctl restart docker ``` 
- 
-下面是我在网上摘抄的，如有侵权，联系删除
+``` shell
+systemctl restart docker 
+``` 
 
 ### 二、删除原有容器，重新建新容器
 
@@ -39,12 +49,18 @@ docker commit：把一个容器的文件改动和配置信息commit到一个新�
 
 #### 1、停止docker容器
 
-```docker stop container01```
+``` shell
+docker stop container01
+```
 
 #### 2、commit该docker容器
 
-```docker commit container01 new_image:tag ```
+``` shell
+docker commit container01 new_image:tag 
+```
 #### 3、用前一步新生成的镜像重新起一个容器
 
-```docker run --name container02 -p 80:80 new_image:tag ```
+``` shell
+docker run --name container02 -p 80:80 new_image:tag 
+```
 这种方式的优点是不会影响统一宿主机上的其他容器，缺点是管理起来显得比较乱。

@@ -14,7 +14,7 @@ categories:
 
 可以用 switch 语句替换多个 if else 块以提高可读性。
 
-```
+```javascript
 function onKeyPress(key) {
   if (key === 'a') {
     moveLeft();
@@ -32,9 +32,9 @@ function onKeyPress(key) {
 }
 ```
 
-可以更好地写成：
+可以更好地写成👇：
 
-```
+```javascript
 function onKeyPress(key) {
   switch (key) {
     case 'a':
@@ -61,7 +61,7 @@ function onKeyPress(key) {
 
 但还有更好的方法。我们可以使用对象文字/映射以简洁的方式重写它：
 
-```
+```javascript
 function onKeyPress(key) {
   const mapping = {
     a: moveLeft,
@@ -85,7 +85,7 @@ function onKeyPress(key) {
 
 为了匹配多个条件，我们通常将代码写成：
 
-```
+```javascript
 const isAnimal = animal => {
   if (animal === 'cat' || animal === 'dog'
     || animal === 'lion' || animal === 'bird') {
@@ -97,7 +97,7 @@ const isAnimal = animal => {
 
 但是我们可以使用内置的 Array.includes() 方法来做到这一点，而不必担心添加这么多“或”条件。
 
-```
+```javascript
 const isAnimal = animal => {
   const animals = ['cat', 'dog', 'lion', 'bird'];
   return animals.includes(animal);
@@ -106,7 +106,7 @@ const isAnimal = animal => {
 
 或者，如果我们正在处理对象数组并想要检查属性，我们可以使用 Array.some() 方法来检查是否满足条件：
 
-```
+```javascript
 const isAnimal = name => {
   const animals = [
     { name: 'cat', legs: 4 },
@@ -123,7 +123,7 @@ const isAnimal = name => {
 #### 3. 使用默认值和解构
 使用最新的 ECMAScript 特性总是一件好事。并且提供默认值消除了在初始化变量时对某些条件的需要。使用对象解构也是如此。
 
-```
+```javascript
 const test = (animal, legs) => {
   if (!animal) return;
   const num_legs = legs || 0; // if legs not provided, default to zero
@@ -133,7 +133,7 @@ const test = (animal, legs) => {
 
 我们可以使用默认函数值来移除值初始化周围的条件。
 
-```
+```javascript
 const test = (animal, legs = 0) => {
   if (!animal) return;
   console.log(`${animal} has ${num_legs} legs!`);
@@ -142,7 +142,7 @@ const test = (animal, legs = 0) => {
 
 如果我们正在处理对象，我们可以使用解构运算符。从：
 
-```
+```javascript
 const test = (animal) => { 
   // printing animal name if value provided
   if (animal && animal.name)  {
@@ -155,7 +155,7 @@ const test = (animal) => {
 
 可以改写为：
 
-```
+```javascript
 function test({name} = {}) { 
     console.log (name || 'unknown');
 }

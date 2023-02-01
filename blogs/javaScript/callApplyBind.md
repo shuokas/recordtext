@@ -13,7 +13,7 @@ categories:
 
 call()方法调用依赖于执行上下文，换句话说，可以将函数绑定到对象中，就好像它就是这个对象的属性一样。
 
-```
+```javascript
 var obj = { num: 1 };
 function add(v) {
 	return this.num + v
@@ -34,7 +34,7 @@ add(2);
 
 我们稍微改造一下函数，让函数接收多个参数
 
-```
+```javascript
 var obj = { num: 1 };
 function add(who,v) {
 	return `${who} have ${this.num + v}` 
@@ -47,7 +47,7 @@ add.call(obj, 'He',5);
 
 apply()方法与call()功能相同， 不同之处在于call()接受参数列表，但apply()接受参数数组。
 
-```
+```javascript
 var obj = { num: 1 };
 function add(who,v) {
 	return `${who} have ${this.num + v}` 
@@ -60,7 +60,7 @@ add.apply(obj,  ['He',5]);
 > bind() 方法创建一个新的函数，在 bind() 被调用时，这个新函数的 this 被指定为 bind() 的第一个参数，而其余参数将作为新函数的参数，供调用时使用。<br>--MDN
 
 bind()方法使用后并不会立即调用，他会返回一个函数。
-```
+``` javascript
 var obj = { num: 2 };
 
 function add(a, b){
@@ -71,7 +71,7 @@ const func = add.bind(obj, 3, 5);
 func(); // 返回 10
 ```
 我们再看下一个例子：
-```
+```javascript
 let person = {
     name: 'John',
     getName: function() {
@@ -86,7 +86,7 @@ window.setTimeout(person.getName, 1000);// 打印 空
 当window调用它的setTimeout()方法时，它的this对象就是window对象。因此，当setTimeout()调用函数person.getName()window对象中找不到这个函数，它不知道这个人的名字是什么。bind()要克服这个问题，请使用该方法将函数绑定到 person 对象。这样无论你在哪里调用函数，它仍然可以访问name.person
 
 我们将上面的例子稍微改造一下：
-```
+``` javascript
 let person = {
     name: 'John',
     getName: function() {
@@ -98,7 +98,7 @@ window.setTimeout(func, 1000); // 打印 John
 ```
 ## 总结
 
-```
+```javascript
 var obj = { num: 2 };
 
 function add(a, b){
